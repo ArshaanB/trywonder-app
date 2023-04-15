@@ -17,6 +17,8 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 
+import { TextField } from '@/components/Fields'
+
 function BackgroundIllustration(props) {
   let id = useId()
 
@@ -349,14 +351,28 @@ export function Hero() {
               when to sell to avoid painful losses.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <AppStoreLink />
+              <form className="flex w-full justify-center md:w-auto">
+                <TextField
+                  type="email"
+                  aria-label="Email address"
+                  placeholder="Email address"
+                  autoComplete="email"
+                  required
+                  className="w-60 min-w-0 shrink"
+                />
+                <Button type="submit" className="ml-4 flex-none">
+                  <span className="hidden lg:inline">Join our waitlist</span>
+                  <span className="lg:hidden">Join our waitlist</span>
+                </Button>
+              </form>
+              {/* <AppStoreLink />
               <Button
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                 variant="outline"
               >
                 <PlayIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2.5">Watch the video</span>
-              </Button>
+              </Button> */}
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
@@ -367,7 +383,7 @@ export function Hero() {
               </PhoneFrame>
             </div>
           </div>
-          <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
+          {/* <div className="relative -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
             <p className="text-center text-sm font-semibold text-gray-900 lg:text-left">
               As featured in
             </p>
@@ -390,7 +406,7 @@ export function Hero() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
         </div>
       </Container>
     </div>
