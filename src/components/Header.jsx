@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Link from 'next/link'
 import { Popover } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -6,6 +7,9 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+
+import { handleSubmitEmail } from '@/api/formFunctions'
+import Modal from './Modal'
 
 function MenuIcon(props) {
   return (
@@ -46,6 +50,17 @@ function MobileNavLink({ children, ...props }) {
 }
 
 export function Header() {
+  const [isModalVisible, setIsModalVisible] = useState(false)
+
+  const handleJoinWaitlist = (email, setMessage) => {
+    handleSubmitEmail(email, setMessage)
+    setIsModalVisible(false)
+  }
+
+  const toggleModalVisibility = () => {
+    setIsModalVisible(!isModalVisible)
+  }
+
   return (
     <header>
       <nav>
@@ -125,9 +140,15 @@ export function Header() {
             {/* <Button href="/login" variant="outline" className="hidden lg:block">
               Log in
             </Button> */}
-            <Button href="#" className="hidden lg:block">
+            <Button onClick={toggleModalVisibility} className="hidden lg:block">
               Join our waitlist
             </Button>
+            {isModalVisible && (
+              <Modal
+                onSubmit={handleJoinWaitlist}
+                onClose={toggleModalVisibility}
+              />
+            )}
           </div>
         </Container>
       </nav>

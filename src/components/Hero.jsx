@@ -3,6 +3,8 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { motion, useInView, useMotionValue } from 'framer-motion'
 
+import { handleSubmitEmail } from '@/api/formFunctions'
+
 import { AppScreen } from '@/components/AppScreen'
 import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
@@ -341,33 +343,10 @@ function AppDemo() {
 export function Hero() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const formId = '5054317'
 
   async function handleSubmit(e) {
     e.preventDefault()
-    try {
-      const response = await fetch(
-        `https://api.convertkit.com/v3/forms/${formId}/subscribe`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            api_key: process.env.NEXT_PUBLIC_CONVERT_KIT_API_KEY,
-            email: email,
-          }),
-        }
-      )
-
-      if (response.status === 200) {
-        setMessage('Successfully subscribed to the mailing list!')
-      } else {
-        setMessage('An error occurred. Please try again later.')
-      }
-    } catch (error) {
-      setMessage('An error occurred. Please try again later.')
-    }
+    handleSubmitEmail(email, setMessage)
   }
 
   return (
