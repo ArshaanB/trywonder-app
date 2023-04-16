@@ -339,6 +339,37 @@ function AppDemo() {
 }
 
 export function Hero() {
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const formId = '5054317'
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    try {
+      const response = await fetch(
+        `https://api.convertkit.com/v3/forms/${formId}/subscribe`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            api_key: process.env.NEXT_PUBLIC_CONVERT_KIT_API_KEY,
+            email: email,
+          }),
+        }
+      )
+
+      if (response.status === 200) {
+        setMessage('Successfully subscribed to the mailing list!')
+      } else {
+        setMessage('An error occurred. Please try again later.')
+      }
+    } catch (error) {
+      setMessage('An error occurred. Please try again later.')
+    }
+  }
+
   return (
     <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
@@ -353,9 +384,14 @@ export function Hero() {
               filter for real messages.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <form className="flex w-full justify-center md:w-auto">
+              <form
+                className="flex w-full justify-center md:w-auto"
+                onSubmit={handleSubmit}
+              >
                 <TextField
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   aria-label="Email address"
                   placeholder="Email address"
                   autoComplete="email"
@@ -375,6 +411,7 @@ export function Hero() {
                 <PlayIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2.5">Watch the video</span>
               </Button> */}
+              <p>{message}</p>
             </div>
           </div>
           <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
