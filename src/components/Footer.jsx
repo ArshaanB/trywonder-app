@@ -81,7 +81,7 @@ export function Footer() {
           </form> */}
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com"
+              href="https://twitter.com/trywonderapp"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
@@ -91,12 +91,12 @@ export function Footer() {
               icon={InstagramIcon}
             /> */}
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/ArshaanB/trywonder-app"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/wonder-app-123/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
