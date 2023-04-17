@@ -19,6 +19,7 @@ import logoHuffpost from '@/images/logos/huffpost.svg'
 import logoTechcrunch from '@/images/logos/techcrunch.svg'
 import logoWired from '@/images/logos/wired.svg'
 import logoPolygonDAO from '@/images/logos/PolygonDAOLogo.svg'
+// import logoPolygonDAO from '@/images/logos/polygondao.svg'
 import logoAntler from '@/images/logos/antler.svg'
 
 import { TextField } from '@/components/Fields'
@@ -355,12 +356,12 @@ export function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
             <h1 className="text-4xl font-medium tracking-tight text-gray-900">
-              Message people and actually get a reply!
+              Get in touch with busy people!
             </h1>
             <p className="mt-6 text-lg text-gray-600">
-              With Wonder you can differentiate from all the other inbound by
-              placing a bounty on your messages. The bounty plays the role of a
-              filter for real messages.
+              Wonder makes it easy to stand out in crowded inboxes by placing a
+              bounty on your messages. Connect with busy experts and get the
+              advice you need, faster than ever before.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <form
