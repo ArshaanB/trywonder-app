@@ -401,7 +401,7 @@ export function Hero() {
                 <AppDemo />
               </PhoneFrame> */}
               <img
-                src="trywonder-app-hero-mockup2.png"
+                src="trywonder-app-hero-mockup.png"
                 className="mx-auto max-w-md"
                 alt=""
               />
