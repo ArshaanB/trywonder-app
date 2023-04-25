@@ -12,7 +12,7 @@ export function Logomark(props) {
 
 export function Logo(props) {
   return (
-    <img width="200px" src="Wonder_Website_Logo_v2.png" />
+    <img {...props} src="Wonder_Website_Logo_v2.png" />
     // <svg
     //   id="Layer_1"
     //   data-name="Layer 1"

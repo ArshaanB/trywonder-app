@@ -64,16 +64,16 @@ export function Header() {
   return (
     <header>
       <nav>
-        <Container className="relative z-50 flex justify-between py-8">
-          <div className="relative z-10 flex items-center gap-16">
+        <Container className="relative z-50 flex justify-between py-8 ">
+          <div className="relative z-10 mx-auto flex items-center gap-16 md:mx-0">
             <Link href="/" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+              <Logo className="w-80 md:w-60" />
             </Link>
             <div className="hidden lg:flex lg:gap-10">
               <NavLinks />
             </div>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex hidden items-center gap-6 md:block">
             {/* <Popover className="lg:hidden">
               {({ open }) => (
                 <>
@@ -140,7 +140,7 @@ export function Header() {
             {/* <Button href="/login" variant="outline" className="hidden lg:block">
               Log in
             </Button> */}
-            <Button onClick={toggleModalVisibility} className="hidden lg:block">
+            <Button onClick={toggleModalVisibility} className="hidden md:block">
               Join our waitlist
             </Button>
             {isModalVisible && (
