@@ -348,6 +348,7 @@ export function Hero() {
   async function handleSubmit(e) {
     e.preventDefault()
     handleSubmitEmail(email, setMessage)
+    setEmail('')
   }
 
   return (
