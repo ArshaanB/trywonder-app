@@ -5,7 +5,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 
 export default function App({ Component, pageProps }) {
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_CONVERT_KIT_API_KEY
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
   return (
     <>
       <Script
