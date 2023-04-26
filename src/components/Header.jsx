@@ -73,7 +73,7 @@ export function Header() {
               <NavLinks />
             </div>
           </div>
-          <div className="flex hidden items-center gap-6 md:block">
+          <div className="flex hidden place-items-center items-center gap-6 md:grid">
             {/* <Popover className="lg:hidden">
               {({ open }) => (
                 <>
