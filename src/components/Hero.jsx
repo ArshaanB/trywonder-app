@@ -418,7 +418,7 @@ export function Hero() {
             >
               {[
                 ['PolygonDAO', logoPolygonDAO],
-                ['TechCrunch', logoAntler],
+                ['Antler', logoAntler],
                 // ['Wired', logoWired],
                 // ['CNN', logoCnn, 'hidden xl:block'],
                 // ['BBC', logoBbc],
