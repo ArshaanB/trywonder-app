@@ -37,8 +37,11 @@ export function BannerWithButton({ closeBanner }) {
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          Your insights will help design a messaging experience you&apos;ll
-          love!
+          <span className="lg:hidden">We&apos;d love your insights!</span>
+          <span className="hidden lg:inline">
+            Your insights will help design a messaging experience you&apos;ll
+            love!
+          </span>
         </p>
         <a
           href="https://survey.typeform.com/to/kE5Vdylc"
