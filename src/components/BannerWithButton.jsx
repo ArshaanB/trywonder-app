@@ -29,15 +29,18 @@ export function BannerWithButton({ closeBanner }) {
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         <p className="text-sm leading-6 text-gray-900">
-          <strong className="font-semibold">Survey</strong>
+          <strong className="font-semibold lg:hidden">
+            Give your opinion!
+          </strong>
+          <strong className="hidden font-semibold lg:inline">Survey</strong>
           <svg
             viewBox="0 0 2 2"
-            className="mx-2 inline h-0.5 w-0.5 fill-current"
+            className="mx-2 inline hidden h-0.5 w-0.5 fill-current lg:inline"
             aria-hidden="true"
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          <span className="lg:hidden">We&apos;d love your insights!</span>
+          {/* <span className="lg:hidden">We&apos;d love your insights!</span> */}
           <span className="hidden lg:inline">
             Your insights will help design a messaging experience you&apos;ll
             love!
