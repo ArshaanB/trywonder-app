@@ -7,6 +7,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
 import { NavLinks } from '@/components/NavLinks'
+import { BannerWithButton } from '@/components/BannerWithButton'
 
 import { handleSubmitEmail } from '@/api/formFunctions'
 import Modal from './Modal'
@@ -51,6 +52,7 @@ function MobileNavLink({ children, ...props }) {
 
 export function Header() {
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isBannerVisible, setIsBannerVisible] = useState(true)
 
   const handleJoinWaitlist = (email, setMessage) => {
     handleSubmitEmail(email, setMessage)
@@ -63,6 +65,9 @@ export function Header() {
 
   return (
     <header>
+      {isBannerVisible ? (
+        <BannerWithButton closeBanner={setIsBannerVisible} />
+      ) : null}
       <nav>
         <Container className="relative z-50 flex justify-between py-8 ">
           <div className="relative z-10 mx-auto flex items-center gap-16 md:mx-0">
