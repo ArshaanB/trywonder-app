@@ -1,5 +1,7 @@
 # Wonder
 
+Makes it possible to message people and pay them to reply.
+
 Visit [Wonder](https://www.trywonder.app/) by clicking here.
 
 ![Hello](WonderHomepage.png)
